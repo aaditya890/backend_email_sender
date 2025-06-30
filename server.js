@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('✅ Resend Email API is running');
+  // res.send('✅ Resend Email API is running');
 });
 
 app.post('/send-email', async (req, res) => {
@@ -17,7 +17,7 @@ app.post('/send-email', async (req, res) => {
 
   try {
     const response = await axios.post(
-      'https://api.resend.com/emails',
+      // 'https://api.resend.com/emails',
       {
         from: 'Support <support@kitecab.com>', // ✅ Verified sender
         to,
