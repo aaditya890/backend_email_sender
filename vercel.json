@@ -1,4 +1,5 @@
 {
+  "version": 2,
   "functions": {
     "api/index.ts": { "runtime": "edge" },
     "api/send-email.ts": { "runtime": "edge" }
