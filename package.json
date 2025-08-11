@@ -1,10 +1,29 @@
 {
   "functions": {
-    "api/index.ts": { "runtime": "edge", "regions": ["sin1"] },
-    "api/send-email.ts": { "runtime": "edge", "regions": ["sin1"] }
+    "api/index.ts": {
+      "runtime": "edge",
+      "regions": [
+        "sin1"
+      ]
+    },
+    "api/send-email.ts": {
+      "runtime": "edge",
+      "regions": [
+        "sin1"
+      ]
+    }
   },
   "rewrites": [
-    { "source": "/send-email", "destination": "/api/send-email" }, 
-    { "source": "/", "destination": "/api" }                        
-  ]
+    {
+      "source": "/send-email",
+      "destination": "/api/send-email"
+    },
+    {
+      "source": "/",
+      "destination": "/api"
+    }
+  ],
+  "devDependencies": {
+    "@types/node": "^24.2.1"
+  }
 }
