@@ -12,32 +12,32 @@ app.get('/', (req, res) => {
   res.send('✅ Resend Email API is running');
 });
 
-app.post('/send-email', async (req, res) => {
-  const { to, subject, html } = req.body;
+// app.post('/send-email', async (req, res) => {
+//   const { to, subject, html } = req.body;
 
-  try {
-    const response = await axios.post(
-      'https://api.resend.com/emails',
-      {
-        from: 'Support <support@kitecab.com>', // ✅ Verified sender
-        to,
-        subject,
-        html
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
-          'Content-Type': 'application/json'
-        }
-      }
-    );
+//   try {
+//     const response = await axios.post(
+//       'https://api.resend.com/emails',
+//       {
+//         from: 'Support <support@kitecab.com>', // ✅ Verified sender
+//         to,
+//         subject,
+//         html
+//       },
+//       {
+//         headers: {
+//           Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+//           'Content-Type': 'application/json'
+//         }
+//       }
+//     );
 
-    res.status(200).json({ message: 'Email sent successfully', result: response.data });
-  } catch (err) {
-    console.error(err.response?.data || err.message);
-    res.status(500).json({ error: 'Failed to send email' });
-  }
-});
+//     res.status(200).json({ message: 'Email sent successfully', result: response.data });
+//   } catch (err) {
+//     console.error(err.response?.data || err.message);
+//     res.status(500).json({ error: 'Failed to send email' });
+//   }
+// });
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
