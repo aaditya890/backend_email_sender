@@ -8,6 +8,18 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+/* 🔴 PAUSE SWITCH (ADD THIS BLOCK) */
+if (process.env.SERVICE_PAUSED === 'true') {
+  app.use((req, res) => {
+    return res.status(503).json({
+      success: false,
+      message: 'Service temporarily paused'
+    });
+  });
+}
+/* 🔴 PAUSE SWITCH END */
+
+
 app.get('/', (req, res) => {
   res.send('✅ Resend Email API is running');
 });
