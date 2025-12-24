@@ -18,8 +18,6 @@ if (process.env.SERVICE_PAUSED === 'true') {
   });
 }
 /* 🔴 PAUSE SWITCH END */
-
-
 app.get('/', (req, res) => {
   res.send('✅ Resend Email API is running');
 });
